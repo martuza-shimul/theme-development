@@ -1,8 +1,12 @@
-<div class="body" data-currency-code="{{currency_selector.active_currency_code}}">
-    {{#block "hero"}} {{/block}}
-    <div class="container">
+<div
+	class="body"
+	data-currency-code="{{currency_selector.active_currency_code}}"
+>
+	{{#block "hero"}} {{/block}}
+	<div class="container">
+		{{> components/common/banners}} 
         {{#block "page"}} {{/block}}
-    </div>
-    {{> components/common/modal}}
+	</div>
+	{{> components/common/modal}} 
     {{> components/common/alert-modal}}
 </div>

@@ -5,7 +5,7 @@
 	"footer": {
 		"brands": "Popular Brands",
 		"navigate": "Navigate",
-		"info": "Info",
+		"info": "Get in Touch",
 		"categories": "Categories",
 		"call_us": "Call us at {phone_number}",
 		"custom": "Custom Nav"
@@ -799,7 +799,7 @@
 		"unsubscribed_message": "You will no longer receive marketing emails from <b>{store_name}</b>"
 	},
 	"social": {
-		"connect": "Connect With Us"
+		"connect": "Follow Us"
 	},
 	"errors": {
 		"shipping_quote_failure": "There was a problem retrieving your shipping quote",
