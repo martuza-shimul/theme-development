@@ -1,0 +1,68 @@
+@include breakpoint("medium") {
+	.customDiv {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		// border: 2px solid rgb(207, 27, 27);
+		// padding: 0 10px;
+		max-width: 90%;
+		margin: 0 auto;
+		.customLogoWrapper {
+			flex-basis: 15%;
+			// border: 2px solid #000;
+		}
+		.navPages-container {
+			flex-basis: 80%;
+			justify-self: flex-end;
+			// border: 2px solid #000;
+
+			.navPages {
+				text-align: right;
+			}
+		}
+	}
+}
+
+.header-logo {
+	// @include breakpoint("small") {
+	// 	// 4
+	// 	margin-left: remCalc($header-toggle-width * 1.5);
+	// 	margin-right: remCalc($header-toggle-width * 1.5);
+	// }
+
+	@include breakpoint("medium") {
+		margin: 0;
+		padding: 0;
+
+		.header.fixed & {
+			background-color: color("greys", "lightest");
+			margin: 0;
+			padding: spacing("quarter") 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+	}
+
+	// > a {
+	// 	@include clearfix;
+	// 	color: $storeName-color;
+	// 	display: inline-block;
+	// 	padding: $header-logo-paddingVertical 0;
+	// 	position: relative;
+	// 	text-decoration: none;
+	// 	width: 60%;
+	// 	z-index: zIndex("low");
+
+	// 	// scss-lint:disable NestingDepth
+	// 	@include breakpoint("medium") {
+	// 		background: none;
+	// 		border-bottom: 0;
+	// 		display: inline;
+	// 		padding: 0;
+	// 		width: 100%;
+	// 	}
+
+	// }
+}

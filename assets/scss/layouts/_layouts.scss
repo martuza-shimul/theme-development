@@ -2,12 +2,12 @@
 // LAYOUTS
 // =============================================================================
 
-
 // Global layouts
 // -----------------------------------------------------------------------------
 
 // Header
 @import "header/header";
+@import "./header/customHeader";
 
 // Page
 @import "body/body";
@@ -20,7 +20,6 @@
 
 // Container
 @import "container/container";
-
 
 // Page content layouts
 // -----------------------------------------------------------------------------
