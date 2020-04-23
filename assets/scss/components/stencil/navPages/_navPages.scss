@@ -80,6 +80,7 @@
 		padding: 0;
 		text-align: center;
 
+		//custom design section
 		.navPages-list.navPages-list-depth-max {
 			.navPages-item {
 				padding: spacing("half") + spacing("half") 0;
@@ -90,6 +91,7 @@
 				}
 			}
 		}
+		//custom design end
 	}
 
 	ul {
@@ -210,7 +212,7 @@
 		padding: 0 spacing("half") + spacing("half"); //custom design
 		// padding: spacing("half") (spacing("half") + spacing("quarter"))
 		// 	(spacing("half") + spacing("quarter"));
-		border-right: 1px solid stencilColor("navPages-color-hover");
+		border-right: 2px solid lighten(stencilColor("navPages-color-hover"), 15);
 
 		&.is-open {
 			background-color: stencilColor("navPages-subMenu-backgroundColor");

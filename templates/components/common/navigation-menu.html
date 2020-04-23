@@ -3,6 +3,7 @@
         {{> components/common/quick-search}}
     </div>
     <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
+        
         {{#each categories}}
             <li class="navPages-item">
             {{#if ../theme_settings.navigation_design '===' 'simple'}}
@@ -21,6 +22,12 @@
                  </li>
              {{/each}}
         {{/unless}}
+        
+            {{!-- search --}}
+		{{!-- <li class="navPages-item">
+			{{> components/common/quick-search}}
+		</li> --}}
+        
     </ul>
     <ul class="navPages-list navPages-list--user">
         {{#if currency_selector.currencies.length '>' 1}}
