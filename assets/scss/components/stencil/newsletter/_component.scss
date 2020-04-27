@@ -4,7 +4,7 @@
 	// background: linear-gradient(rgba(#000000, 0.4), rgba(#cccccc, 0.2)),
 	// 	url("{{cdn 'webdav: ../../../../img/newsletter-bg.jpg'}}") no-repeat top;
 	// background: url("./newsletter-bg.jpg");
-	background: rgb(236, 25, 183);
+	background: rgb(196, 38, 156);
 	text-align: center;
 	padding: 10vh 0;
 	text-transform: capitalize;
@@ -30,6 +30,7 @@
 
 @include breakpoint("medium") {
 	.newsletter-wrapper {
+		// background: url({{cdn"assets/icons/free.png"}});
 		margin: 10vh 0;
 		padding: 15vh 0;
 		.container {
