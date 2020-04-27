@@ -29,7 +29,17 @@ product:
             {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
         {{/all}}
 
-        {{> components/products/tabs}}
+        {{!-- {{> components/products/tabs}} --}}
+        
+        {{!-- custom design element --}}
+       <div class="related-products">
+           <h3 class="rp-title" >Related Products</h3>
+            {{#if settings.data_tag_enabled}}
+            {{> components/products/carousel products=product.related_products columns=4 list="Related Products"}}
+            {{else}}
+                {{> components/products/carousel products=product.related_products columns=4}}
+            {{/if}}
+       </div>
     </div>
 {{/partial}}
 {{> layout/base}}

@@ -6,9 +6,10 @@
                 <button class="button button--icon" data-action="dec">
                     <span class="is-srOnly">{{lang 'products.quantity_decrease'}}</span>
                     <i class="icon" aria-hidden="true">
-                        <svg>
+                        {{!-- <svg>
                             <use xlink:href="#icon-keyboard-arrow-down"/>
-                        </svg>
+                        </svg> --}}
+                        -
                     </i>
                 </button>
                 <input class="form-input form-input--incrementTotal"
@@ -24,9 +25,10 @@
                 <button class="button button--icon" data-action="inc">
                     <span class="is-srOnly">{{lang 'products.quantity_increase'}}</span>
                     <i class="icon" aria-hidden="true">
-                        <svg>
+                        {{!-- <svg>
                             <use xlink:href="#icon-keyboard-arrow-up"/>
-                        </svg>
+                        </svg> --}}
+                        +
                     </i>
                 </button>
             </div>
@@ -41,7 +43,20 @@
 </div>
 {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
     <div class="form-action">
-        <input id="form-action-addToCart" data-wait-message="{{lang 'products.adding_to_cart'}}" class="button button--primary" type="submit"
-            value="{{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}">
+        
+        <button id="form-action-addToCart" data-wait-message="{{lang 'products.adding_to_cart'}}" class="button button--primary" type="submit" >
+            {{#if product.pre_order}}
+            {{lang 'products.pre_order'}}
+            {{else}} 
+           <img src="{{cdn 'assets/icons/cart-white.png'}}" alt="cart icon">
+            {{lang 'products.add_to_cart'}}
+            {{/if}}
+        </button>
+        {{!-- <input id="form-action-addToCart" data-wait-message="{{lang 'products.adding_to_cart'}}" class="button button--primary" type="submit"
+            value="{{#if product.pre_order}}
+            {{lang 'products.pre_order'}}
+            {{else}} 
+            {{lang 'products.add_to_cart'}}
+            {{/if}}"> --}}
     </div>
 {{/or}}

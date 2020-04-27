@@ -224,6 +224,7 @@
                     {{#each product.options}}
                         {{{dynamicComponent 'components/products/options'}}}
                     {{/each}}
+
                 </div>
                 <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
                     <label class="form-label form-label--alternate">
@@ -242,21 +243,28 @@
                     {{/if}}
                 {{/if}}
             </form>
-            {{#if settings.show_wishlist}}
+            {{!-- {{#if settings.show_wishlist}}
                 {{> components/common/wishlist-dropdown}}
-            {{/if}}
+            {{/if}} --}}
         </div>
-        {{> components/common/share}}
+        {{!-- {{> components/common/share}} --}}
     </section>
-
-    <article class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
+    {{!-- <div>
+        <article class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
         {{#if theme_settings.show_product_details_tabs}}
             {{> components/products/description-tabs}}
         {{else}}
             {{> components/products/description}}
         {{/if}}
     </article>
+    </div> --}}
+   <div >
+        {{> components/products/description}}
+   </div>
+    
 </div>
+
+
 
 <div id="previewModal" class="modal modal--large" data-reveal>
     <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
