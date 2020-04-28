@@ -1,5 +1,12 @@
 ---
-cart: true
+cart: 
+    suggestions:
+        limit: 4
+
+product:
+    related_products:
+            limit: 4
+
 ---
 {{#partial "page"}}
 <div class="page">
@@ -22,6 +29,37 @@ cart: true
 
             <div data-cart-totals>
                 {{> components/cart/totals}}
+            </div>
+
+            <div class="coupon">
+                {{#if cart.coupons}}
+                    {{#each cart.coupons}}
+                        <li class="cart-total">
+                            <div class="cart-total-label">
+                                <strong>{{lang 'cart.coupons.code_label' code=code}}</strong>
+                                <div>
+                                    <a href="{{remove_url}}">{{lang 'cart.coupons.remove'}}</a>
+                                </div>
+                            </div>
+                            <div class="cart-total-value">
+                                <span>{{discount.formatted}}</span>
+                            </div>
+                        </li>
+                    {{/each}}
+                {{else}}
+                    <li class="cart-total">
+                        <h3 class="cart-total-label">
+                            {{lang 'cart.coupon_code'}}
+                        </h3>
+                        {{!-- {{> components/cart/coupon-input}} --}}
+                        <form class="form form--hiddenLabels coupon-form" method="post" action="{{urls.cart}}">
+                            <label class="form-label" for="couponcode">{{lang 'cart.coupons.coupon_code'}}</label>
+                            <input class="form-input" data-error="{{lang 'cart.coupons.empty_error'}}"  id="couponcode" type="text" name="couponcode" value="" placeholder="{{lang 'cart.coupons.coupon_code'}}">
+                            <input class="button button--primary button--small" type="submit" value="{{lang 'cart.coupons.button'}}">
+                            <input type="hidden" name="action" value="applycoupon">
+                        </form>
+                    </li>
+                {{/if}}
             </div>
 
             {{#if cart.show_primary_checkout_button}}
@@ -49,8 +87,32 @@ cart: true
         {{else}}
             <h3>{{lang 'cart.checkout.empty_cart'}}</h3>
         {{/if}}
+         {{!-- {{#if cart.suggested_products}}
+        <section class="suggestiveCart">
+            <h4>
+                {{lang 'cart.added_to_cart.you_might_also_like'}}&hellip;
+            </h4>
 
+            <ul class="productGrid">
+                {{#each cart.suggested_products}}
+                    <li class="product">
+                        {{> components/products/card settings=../settings hide_product_quick_view=true theme_settings=../theme_settings}}
+                    </li>
+                {{/each}}
+            </ul>
+        </section>
+    {{/if}} --}}
     </main>
+    {{!-- <div class="related-products">
+        {{#if product.similar_by_views}}
+        <h3 class="rp-title" >Related Products</h3>
+            {{> components/products/carousel products=product.related_products columns=4 list="Related Products"}}
+        {{else}}
+            {{> components/products/carousel products=product.related_products columns=4}}
+            {{> components/products/carousel products=product.similar_by_views columns=6 list="Customers Also Viewed"}}
+        {{/if}}
+    </div> --}}
 </div>
+
 {{/partial}}
 {{> layout/base}}

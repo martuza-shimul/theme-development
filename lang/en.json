@@ -65,7 +65,7 @@
 		},
 		"label": "Your Cart ({quantity, plural, one {# item} other {# items}})",
 		"is_empty": "Your cart is empty",
-		"coupon_code": "Coupon Code",
+		"coupon_code": "Voucher",
 		"discount": "Discount",
 		"gift_certificate": "Gift Certificate",
 		"remove_file": "Remove this file",
@@ -79,7 +79,7 @@
 			"add_code": "Add code",
 			"add_coupon": "Add Coupon",
 			"button": "Apply",
-			"coupon_code": "Enter your coupon code",
+			"coupon_code": "Enter your voucher code",
 			"code_label": "Coupon ({code})",
 			"remove": "Remove"
 		},

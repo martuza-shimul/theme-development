@@ -303,6 +303,9 @@
 	}
 
 	.form {
+		.form-input--incrementTotal {
+			width: 4rem;
+		}
 		display: inline;
 		.form-option {
 			border: none;
@@ -488,20 +491,15 @@
 }
 
 .form-input--incrementTotal {
-	border: 0;
 	border-radius: 0;
 	border-top: 1px solid $input-border-color;
 	border-bottom: 1px solid $input-border-color;
-
-	display: inline-block;
 	font-size: 13px;
 	font-weight: 700;
 	line-height: 1.57rem;
-	height: auto;
-	/* padding: 0; */
-	text-align: center;
-	vertical-align: middle;
-	width: 3.5rem;
+	margin: 0 -3px;
+	width: 3rem;
+	padding-top: spacing("quarter") / 4;
 }
 .form-increment .button {
 	border-radius: 0;
