@@ -7,6 +7,7 @@
         {{{ head.config }}}
         {{#block "head"}} {{/block}}
 
+         
         <link href="{{ head.favicon }}" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -21,6 +22,26 @@
             window.lazySizesConfig.loadMode = 1;
         </script>
         <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js'}}"></script>
+        <script>
+            $("#slider-range").slider({
+            range: true, 
+            min: 0,
+            max: 3500,
+            step: 50,
+            slide: function( event, ui ) {
+                $( "#min-price").html(ui.values[ 0 ]);
+                
+                console.log(ui.values[0])
+                
+                suffix = '';
+                if (ui.values[ 1 ] == $( "#max-price").data('max') ){
+                suffix = ' +';
+                }
+                $( "#max-price").html(ui.values[ 1 ] + suffix);         
+            }
+            })
+
+        </script>
 
         {{ getFontsCollection }}
         {{{stylesheet '/assets/css/theme.css'}}}
@@ -34,6 +55,8 @@
         {{~inject 'secureBaseUrl' settings.secure_base_url}}
         {{~inject 'cartId' cart_id}}
         {{~inject 'template' template}}
+
+       
     </head>
     <body>
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>

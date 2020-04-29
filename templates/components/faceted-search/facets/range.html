@@ -54,13 +54,19 @@
                             value="{{ max_price }}"
                         />
                     </div>
+                    {{!-- <div class="form-field">
+                        <input type="range" name="min_price" id="" min="{{min_price}}" max="{{max_price}}" value="{{ min_price }}" data-popup-enabled="true" data-show-value="true" >
+                        <input type="range" name="max_price" id="" min="{{min_price}}" max="{{max_price}}" value="{{ max_price }}" data-popup-enabled="true" data-show-value="true" >
+                        
 
-                    <div class="form-field">
+                    </div> --}}
+
+                </div>
+                    <div class="form-field price-button">
                         <button class="button button--small" type="submit">
                             {{lang 'search.faceted.range.update'}}
                         </button>
                     </div>
-                </div>
 
                 <div class="form-inlineMessage"></div>
             </fieldset>

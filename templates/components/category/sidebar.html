@@ -3,6 +3,7 @@
         <div class="sidebarBlock">
             <h5 class="sidebarBlock-heading">{{category.name}}</h5>
             <ul class="navList">
+                <h5 class="filter-category-title" >Shop by category</h5>
                 {{#each category.subcategories}}
                 <li class="navList-item">
                     <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
@@ -11,6 +12,8 @@
             </ul>
         </div>
     {{/if}}
+
+
 
     {{#if category.faceted_search_enabled}}
         {{> components/faceted-search/index category}}

@@ -1,0 +1,40 @@
+.form-minMaxRow {
+	margin-bottom: spacing("half");
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	.form-field {
+		flex-basis: 48%;
+		.form-input {
+			border-radius: 0;
+			border-color: $color-primary;
+		}
+	}
+}
+
+.form-field.price-button {
+	.button {
+		border-radius: 0;
+		border-color: $color-primary;
+		background-color: $color-primary;
+		color: $color-secondary;
+		margin-left: spacing("quarter") / 2;
+	}
+}
+
+.accordion-block {
+	.accordion-title {
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: spacing("half");
+	}
+}
+.filter-category-title {
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: spacing("half");
+}
+.navList-action--checkbox::before {
+	border-radius: 0;
+	border-color: $color-primary;
+}
