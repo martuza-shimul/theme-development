@@ -12,30 +12,29 @@
 //
 // -----------------------------------------------------------------------------
 
-
 .breadcrumbs {
-    display: none; // 1
-    font-size: 0; // 2
-    text-align: center;
+	display: none; // 1
+	font-size: 0; // 2
+	text-align: left; //custom
+	// text-align: center;  //default
 
-    @include breakpoint("small") {
-        display: block; // 1
-    }
+	@include breakpoint("small") {
+		display: block; // 1
+	}
 }
 
 .breadcrumb {
-    display: inline-block;
-    float: none;
+	display: inline-block;
+	float: none;
 
-    &.is-active {
-
-        // scss-lint:disable NestingDepth
-        > .breadcrumb-label {
-            cursor: text;
-        }
-    }
+	&.is-active {
+		// scss-lint:disable NestingDepth
+		> .breadcrumb-label {
+			cursor: text;
+		}
+	}
 }
 
 .breadcrumb-label {
-    text-decoration: none;
+	text-decoration: none;
 }
