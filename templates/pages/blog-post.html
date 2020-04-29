@@ -1,8 +1,48 @@
+---
+blog:
+  recent_posts:
+    limit: 4
+    summary: 100
+---
+
 {{#partial "page"}}
 
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
-{{> components/blog/post post=blog.post show_tags=true}}
+{{!-- <div class="blog-post-figure">
+        {{#if blog.post.thumbnail}}
+            <figure class="blog-thumbnail">
+                <a href="{{blog.post.url}}">
+                    <img class="img-responsive"  src="{{getImage thumbnail  }}" alt="{{thumbnail.alt}}"> 
+                   
+                    
+                </a>
+            </figure>
+        {{/if}}
+    </div> --}}
 
+
+<div class="single-post-custom">
+  <div class="post-section">
+      {{> components/blog/post post=blog.post show_tags=true}}
+  </div>
+
+
+  <div class="right-sidebar">
+    <div class="rs-recent-post">
+      <h3 class="blog-sidebar-rp-title">
+        Recent Post
+      </h3>
+      {{#if blog.recent_posts}}
+      {{#each blog.recent_posts}}
+        <a class="recent-post-block" href=" {{url}} " >
+            <img class="rp-image"  src="{{getImage thumbnail 'gallery_size' }}" alt="{{thumbnail.alt}}">
+            <p class="rp-blog-title" >{{title}}</p>
+        </a>
+      {{/each}}
+      {{/if}}
+    </div>
+  </div>
+</div>
 {{/partial}}
 {{> layout/base}}

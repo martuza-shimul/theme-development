@@ -828,7 +828,7 @@
 				"clear-all": "Clear all"
 			},
 			"range": {
-				"update": "Update",
+				"update": "Filter",
 				"min-placeholder": "Min.",
 				"max-placeholder": "Max."
 			},

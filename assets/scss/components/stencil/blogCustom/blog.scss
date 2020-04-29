@@ -1,0 +1,38 @@
+.single-post-custom {
+	display: flex;
+	// align-items: flex-start;
+	justify-content: space-between;
+	.post-section {
+		flex-basis: 72%;
+		// border: 2px solid red;
+	}
+	.right-sidebar {
+		flex-basis: 23%;
+		// border: 1px solid red;
+		// padding: 0 spacing("half") + spacing("quarter");
+		.rs-recent-post {
+			border: 1px solid $color-primary;
+			padding: 0 spacing("half") + spacing("quarter");
+			.blog-sidebar-rp-title {
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+		}
+		.recent-post-block {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: spacing("half") 0;
+			text-decoration: none;
+
+			.rp-image {
+				// flex-basis: 30%;
+				max-width: 50px;
+				max-height: 50px;
+			}
+			.rp-blog-title {
+				flex-basis: 68%;
+			}
+		}
+	}
+}

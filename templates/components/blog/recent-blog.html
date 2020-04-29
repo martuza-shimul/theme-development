@@ -1,0 +1,16 @@
+---
+blog:
+  recent_posts:
+    limit: { { theme_settings.homepage_blog_posts_count } }
+    summary: 100
+---
+
+{{#if blog.recent_posts}}
+    <h4>Recent post available</h4>
+    {{#each blog.recent_posts}}
+      <img  src="{{getImage thumbnail 'gallery_size' }}" alt="{{thumbnail.alt}}">
+      <p class="blog-title" >{{title}}</p>
+     {{/each}}
+  {{else}}
+     <h4>Recent post not available</h4>
+ {{/if}}

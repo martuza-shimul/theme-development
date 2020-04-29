@@ -4,6 +4,7 @@ blog:
     limit: 5
     pages: 3
     summary: 200
+  
 ---
 
 {{#partial "page"}} 
@@ -11,9 +12,30 @@ blog:
 
 <main class="page">
 	{{#unless theme_settings.hide_blog_page_heading }}
-	<h1 class="page-heading">{{ blog.name }}</h1>
-	{{/unless}} {{#each blog.posts}} {{> components/blog/post post=this}}
-	{{/each}} {{> components/common/paginator pagination.blog}}
+	  <h1 class="page-heading">{{ blog.name }}</h1>
+	{{/unless}} 
+  <div class="blog-section">
+    {{#each blog.posts}} 
+      {{> components/blog/post post=this}}
+    {{/each}} 
+    {{> components/common/paginator pagination.blog}}
+  </div>
+  {{!-- <div class="right-sidebar">
+    <h3 class="blog-sidebar-title">
+      Recent Post
+
+    </h3>
+    {{#if blog.posts}}
+    <h4>Recent post available</h4>
+    {{#each blog.posts}}
+      <img  src="{{getImage thumbnail 'gallery_size' }}" alt="{{thumbnail.alt}}">
+      <p class="blog-title" >{{title}}</p>
+     {{/each}}
+     {{else}}
+     <h4>Recent post not available</h4>
+     {{/if}}
+  </div> --}}
 </main>
 
-{{/partial}} {{> layout/base}}
+{{/partial}} 
+{{> layout/base}}
