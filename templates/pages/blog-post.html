@@ -7,10 +7,10 @@ blog:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{!-- {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}} --}}
 
 <div class="single-post-wrapper">
-
+ {{> components/common/page-header}}
 <div class="blog-post-image">
         {{#if blog.post.thumbnail}}
             <img class="img-blog" src="{{getImage blog.post.thumbnail}}" alt="{{blog.post.thumbnail.alt}}">

@@ -789,6 +789,7 @@
 	},
 	"newsletter": {
 		"subscribe": "Subscribe to our newsletter",
+		"rs_subscribe": "Get the latest news & updates from us",
 		"subscribe_intro": "Get the latest updates on new products and upcoming sales",
 		"custom_subscribe": "Join our newsletter now.",
 		"custom_subscribe_intro": "up to 70% off. all sales are final!",
