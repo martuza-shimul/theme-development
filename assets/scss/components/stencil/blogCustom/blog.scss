@@ -1,37 +1,119 @@
+.blog-post-body {
+	width: 100% !important;
+	text-align: left !important;
+	.blog-title {
+		margin-left: 0;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: spacing("half") + spacing("half") + spacing("half");
+	}
+	.blog-date,
+	.blog-author {
+		text-align: left;
+		img {
+			margin-right: spacing("quarter");
+		}
+		.date {
+			margin-right: spacing("half") + spacing("half");
+		}
+	}
+}
+
+.blog-post-image {
+	margin: spacing("half") + spacing("half") + spacing("half") 0;
+	.img-blog {
+		width: 100%;
+		max-height: 550px;
+	}
+}
+
 .single-post-custom {
 	display: flex;
 	// align-items: flex-start;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	.post-section {
-		flex-basis: 72%;
+		flex-basis: 66%;
 		// border: 2px solid red;
 	}
 	.right-sidebar {
-		flex-basis: 23%;
+		flex-basis: 30%;
 		// border: 1px solid red;
 		// padding: 0 spacing("half") + spacing("quarter");
 		.rs-recent-post {
-			border: 1px solid $color-primary;
+			border: 1px solid $input-border-color;
 			padding: 0 spacing("half") + spacing("quarter");
 			.blog-sidebar-rp-title {
 				font-weight: 600;
 				text-transform: uppercase;
+				margin-bottom: spacing("half") + spacing("half");
 			}
 		}
 		.recent-post-block {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			margin: spacing("half") 0;
+			margin: spacing("half") + spacing("half") 0;
 			text-decoration: none;
 
 			.rp-image {
 				// flex-basis: 30%;
-				max-width: 50px;
-				max-height: 50px;
+				max-width: 55px;
+				max-height: 55px;
 			}
 			.rp-blog-title {
 				flex-basis: 68%;
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.single-post-custom {
+		.post-section {
+			flex-basis: 100%;
+		}
+		.right-sidebar {
+			flex-basis: 100%;
+
+			.recent-post-block {
+				.rp-image {
+					max-width: 140px;
+					max-height: 90px;
+					margin-right: spacing("half");
+				}
+			}
+		}
+	}
+}
+@media (max-width: 350px) {
+	.blog-post-body {
+		.blog-date,
+		.blog-author {
+			.date {
+				margin-right: spacing("half") + spacing("half");
+				margin-bottom: spacing("half");
+				display: block;
+			}
+		}
+	}
+	.single-post-custom {
+		.post-section {
+			flex-basis: 100%;
+		}
+		.right-sidebar {
+			flex-basis: 100%;
+
+			.recent-post-block {
+				.rp-image {
+					// flex-basis: 30%;
+					max-width: 90px;
+					max-height: 70px;
+				}
+				.rp-blog-title {
+					font-size: 0.9rem;
+				}
 			}
 		}
 	}

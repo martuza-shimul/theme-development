@@ -9,18 +9,14 @@ blog:
 
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
-{{!-- <div class="blog-post-figure">
-        {{#if blog.post.thumbnail}}
-            <figure class="blog-thumbnail">
-                <a href="{{blog.post.url}}">
-                    <img class="img-responsive"  src="{{getImage thumbnail  }}" alt="{{thumbnail.alt}}"> 
-                   
-                    
-                </a>
-            </figure>
-        {{/if}}
-    </div> --}}
+<div class="single-post-wrapper">
 
+<div class="blog-post-image">
+        {{#if blog.post.thumbnail}}
+            <img class="img-blog" src="{{getImage blog.post.thumbnail}}" alt="{{blog.post.thumbnail.alt}}">
+               
+        {{/if}}
+  </div>
 
 <div class="single-post-custom">
   <div class="post-section">
@@ -43,6 +39,9 @@ blog:
       {{/if}}
     </div>
   </div>
+</div>
+
+  
 </div>
 {{/partial}}
 {{> layout/base}}

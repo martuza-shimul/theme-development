@@ -16,7 +16,7 @@
 	"blog": {
 		"recent_posts": "Recent Posts",
 		"label": "Blog",
-		"posted_by": "Posted by {name}",
+		"posted_by": "Posted by: {name}",
 		"read_more": "read more"
 	},
 	"unavailable": {
