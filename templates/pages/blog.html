@@ -7,6 +7,11 @@ blog:
   
 ---
 
+{{#partial 'pageHeader'}}
+{{> components/common/page-header}}
+{{/partial}}
+
+
 {{#partial "page"}} 
 
 
@@ -17,9 +22,9 @@ blog:
 <main class="page">
 
   
-  {{> components/common/page-header}}
+  
 	
-  <div class="blog-section-wrapper">
+  <div class="blog-section-wrapper ">
 
     <div class="blog-section">
       {{#each blog.posts}} 
