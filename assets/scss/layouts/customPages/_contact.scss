@@ -1,0 +1,40 @@
+.contact-header {
+	padding: 5vh;
+	margin-bottom: 3rem;
+	text-align: center;
+	word-wrap: break-word;
+
+	.page-heading {
+		font-size: $fontSize-hero;
+		font-weight: $fontWeight-bold;
+		text-transform: capitalize;
+	}
+	.page-sub-heading {
+		margin: 0 auto;
+		width: 55%;
+		@media (max-width: 767px) {
+			width: 90%;
+		}
+	}
+}
+
+#contact-us-page {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		word-wrap: break-word;
+	}
+
+	// .form-input {
+	// 	border-radius: 0;
+	// }
+	.form-actions {
+		text-align: left;
+	}
+}
+
+.google-map {
+	margin-top: 10vh;
+}
