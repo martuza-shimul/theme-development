@@ -6,7 +6,7 @@
 			rgba(darken($color-primary, 35), 0.7) 81.2%
 		),
 		url("https://cdn11.bigcommerce.com/s-0cvdh/product_images/uploaded_images/page-header.jpg")
-			no-repeat bottom center;
+			no-repeat center;
 	// background-image: url("https://cdn11.bigcommerce.com/s-0cvdh/product_images/uploaded_images/page-header.jpg");
 	display: flex;
 	flex-direction: column;
@@ -26,7 +26,7 @@
 			letter-spacing: 3px;
 		}
 		.page-sub-heading {
-			width: 40%;
+			width: 60%;
 			margin: spacing("half") auto;
 			font-weight: 500;
 		}
