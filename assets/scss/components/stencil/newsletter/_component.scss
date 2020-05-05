@@ -3,16 +3,17 @@
 	margin: 5vh 0;
 	background: linear-gradient(
 			109.6deg,
-			rgba(darken($color-primary, 25), 0.7) 11.2%,
-			rgba(darken($color-primary, 35), 0.8) 81.2%
+			rgba($color-highlightDarker, 1) 11.2%,
+			rgba(darken($color-highlight, 10), 1) 81.2%
 		),
 		url("https://cdn11.bigcommerce.com/s-0cvdh/product_images/uploaded_images/page-header.jpg")
 			no-repeat center;
 	// background: rgb(196, 38, 156);
+	background-blend-mode: multiply;
 	text-align: center;
 	padding: 15vh 0;
 	text-transform: capitalize;
-	color: $color-secondary;
+	color: $color-white;
 	.container {
 		// border: 2px solid #000;
 		width: 100%;
@@ -24,20 +25,38 @@
 
 			letter-spacing: 2px;
 		}
+		.newsletter-header {
+			font-weight: $fontWeight-medium;
+		}
 		.newsletter-header-lg {
 			margin-bottom: 3rem;
 			margin-top: 1rem;
 			letter-spacing: 3px;
-			font-weight: 600;
+			font-size: $fontSize-largest * 1.2;
+			font-weight: $fontWeight-semibold;
 		}
 		.button--primary {
-			background-color: darken($color-primary, 20);
-			color: $color-secondary;
-			border-color: $color-secondary;
+			background-color: $color-black;
+			color: $color-white;
+			border-color: $color-black;
 
 			&:hover {
-				background-color: $color-primary;
+				background-color: $color-accent;
+				border-color: $color-accent;
 			}
+		}
+		.form-prefixPostfix .form-input,
+		.form-prefixPostfix .button {
+			width: initial;
+			margin: 0;
+			@media (max-width: 449px) {
+				width: 100%;
+				margin-top: spacing("half");
+			}
+		}
+		.form-input {
+			border-radius: 0;
+			border-color: $color-white;
 		}
 	}
 }
@@ -54,10 +73,6 @@
 			.newsletter-header,
 			.newsletter-header-lg {
 				color: inherit;
-			}
-			.button--primary {
-				color: $color-secondary;
-				border-color: $color-secondary;
 			}
 		}
 	}

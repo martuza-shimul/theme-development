@@ -8,34 +8,65 @@
 //
 // -----------------------------------------------------------------------------
 
-.productCarousel { // 1
-    width: 1px;
-    min-width: 100%;
-    @include grid-row(
-        $behavior: nest
-    );
+.productCarousel {
+	// 1
+	width: 1px;
+	min-width: 100%;
+	@include grid-row($behavior: nest);
 }
 
-.productCarousel-slide { // 1
-    @include grid-column(6);
+.productCarousel-slide {
+	// 1
+	@include grid-column(6);
 
-    @include breakpoint("small") {
-        width: grid-calc(4, $total-columns);
-    }
+	@include breakpoint("small") {
+		width: grid-calc(4, $total-columns);
+	}
 
-    @include breakpoint("medium") {
-        width: grid-calc(3, $total-columns);
-    }
+	@include breakpoint("medium") {
+		width: grid-calc(3, $total-columns);
+	}
 
-    @include breakpoint("large") {
-        width: grid-calc(2, $total-columns);
-    }
+	@include breakpoint("large") {
+		width: grid-calc(2, $total-columns);
+	}
 
-    .card {
-        margin-bottom: 0;
+	.card {
+		margin-bottom: 0;
 
-        .card-title {
-            overflow-wrap: break-word;
-        }
-    }
+		.card-title {
+			overflow-wrap: break-word;
+		}
+	}
+}
+
+.card-body {
+	.card-title {
+		font-size: $fontSize-large;
+	}
+}
+
+.card-text.custom {
+	margin-top: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.price {
+		.price--withoutTax {
+			font-size: $fontSize-large;
+			font-weight: $fontWeight-semibold;
+		}
+	}
+	.rating {
+		svg {
+			stroke: $color-accent;
+			stroke-width: 2px;
+			fill: $color-white;
+		}
+		.icon--ratingFull {
+			svg {
+				fill: $color-accent;
+			}
+		}
+	}
 }

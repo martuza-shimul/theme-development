@@ -2,8 +2,9 @@
 	padding: 5vh 0;
 	.blog-heading {
 		text-align: center;
-		font-size: fontSize("larger");
-		font-weight: 700;
+		text-transform: uppercase;
+		font-size: $fontSize-largest * 1.3;
+		font-weight: $fontWeight-bold;
 		margin-bottom: 3rem;
 	}
 	.blog-wrapper {
@@ -25,13 +26,16 @@
 				padding: spacing("quarter") + spacing("half") spacing("half") +
 					spacing("half");
 				.publish-date {
-					font-weight: 500;
+					font-weight: $fontWeight-semibold;
+					color: $color-accent;
+					letter-spacing: 1px;
 				}
 				.blog-title {
 					margin-left: 0;
-					font-size: fontSize("small");
-					font-weight: 600;
+					font-size: $fontSize-large;
+					font-weight: $fontWeight-semibold;
 					text-transform: capitalize;
+					letter-spacing: 1px;
 				}
 				a {
 					text-decoration: none;

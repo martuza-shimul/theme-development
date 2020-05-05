@@ -167,7 +167,7 @@
 	.navUser-action {
 		color: stencilColor("navUser-color");
 		.navUser-item-cartLabel {
-			display: block;
+			display: inline-block;
 		}
 
 		// scss-lint:disable NestingDepth

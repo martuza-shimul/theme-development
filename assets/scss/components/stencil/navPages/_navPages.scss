@@ -199,7 +199,7 @@
 }
 
 .navPages-action {
-	color: stencilColor("navPages-color");
+	color: stencilColor("navPages-color-hover");
 	display: block;
 	font-size: fontSize("smaller");
 	font-weight: fontWeight("bold");
@@ -212,7 +212,7 @@
 		padding: 0 spacing("half") + spacing("half"); //custom design
 		// padding: spacing("half") (spacing("half") + spacing("quarter"))
 		// 	(spacing("half") + spacing("quarter"));
-		border-right: 2px solid lighten(stencilColor("navPages-color-hover"), 15);
+		border-right: 2px solid lighten(stencilColor("navPages-color-hover"), 35);
 
 		&.is-open {
 			background-color: stencilColor("navPages-subMenu-backgroundColor");
@@ -227,12 +227,15 @@
 
 	&:hover,
 	&.activePage {
-		color: stencilColor("navPages-color-hover");
+		color: $color-highlight;
+		// color: stencilColor("navPages-color-hover");
 
 		// scss-lint:disable NestingDepth
 		svg {
-			fill: stencilColor("navPages-color-hover");
-			stroke: stencilColor("navPages-color-hover");
+			fill: $color-highlight;
+			stroke: $color-highlight;
+			// fill: stencilColor("navPages-color-hover");
+			// stroke: stencilColor("navPages-color-hover");
 		}
 	}
 
