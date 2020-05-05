@@ -44,8 +44,19 @@ blog:
         {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
     {{/if}}
     {{{region name="home_below_new_products"}}}
-    {{> components/common/newsLetter}} 
     
+    
+    
+</div>
+{{/partial}}
+
+{{#partial 'newsletter'}}
+
+{{> components/common/newsLetter}} 
+{{/partial}}
+
+
+{{#partial 'others'}}
     <div class="blog-section">
         <h3 class="blog-heading" >Latest Blog Posts</h3>
         <div class="blog-wrapper">
@@ -64,7 +75,6 @@ blog:
             {{/each}}
         </div>
     </div>
-</div>
 {{/partial}}
 
 {{> layout/base}}
