@@ -42,7 +42,12 @@
 
 .card-body {
 	.card-title {
-		font-size: $fontSize-large;
+		font-size: $fontSize-large * 0.9;
+		color: $color-black;
+		font-weight: $fontWeight-medium;
+		a {
+			color: inherit;
+		}
 	}
 }
 
