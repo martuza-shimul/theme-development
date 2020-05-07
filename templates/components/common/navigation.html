@@ -2,7 +2,12 @@
 	<div class="promoText">
         <span> <strong>Free Delivery:</strong> Take advantage of our time to save event </span>
     </div>
-
+{{!-- <div
+				class="dropdown-menu medium"
+				id="cart-preview-dropdown"
+				data-dropdown-content
+				aria-hidden="true"
+			></div> --}}
 	<div class="navUserLinks">
         <ul class="navUser-section navUser-section--alt">
 		{{#if customer.store_credit.value '>' 0}}
@@ -46,7 +51,7 @@
 		{{/if}}
 
         {{!-- search --}}
-		<li class="navUser-item">
+		{{!-- <li class="navUser-item">
 			<a
 				class="navUser-action navUser-action--quickSearch"
 				href="#"
@@ -55,11 +60,9 @@
 				aria-expanded="false"
 				>
 
-                <img
-					src="{{cdn 'assets/icons/search.png'}}"
-				/>
-            </a>
-		</li>
+        <img src="{{cdn 'assets/icons/search.png'}}"	/>
+       </a>
+		</li> --}}
 		{{!-- <li class="navUser-item">
 			<a
 				class="navUser-action navUser-action--quickSearch"
@@ -90,25 +93,13 @@
 				>{{lang 'common.logout'}}</a
 			>
 			{{else}}
-			{{!-- <a class="navUser-action" href="{{urls.auth.login}}"
-				>
-                <img
-					src="{{cdn 'webdav: ../../../../../assets/icons/login.png'}}"
-				/>
-                
-                </a> --}}
+			
 			<a class="navUser-action" href="{{urls.auth.login}}"
 				>{{lang 'common.login'}}</a
 			>
 			{{#if settings.account_creation_enabled}}
 			<span class="navUser-or">{{lang 'common.or'}}</span>
-			{{!-- <a class="navUser-action" href="{{urls.auth.create_account}}"
-				>
-                
-                <img
-					src="{{cdn 'webdav: ../../../../../assets/icons/register.png'}}"
-				/>
-                </a> --}}
+			
 			<a class="navUser-action" href="{{urls.auth.create_account}}"
 				>{{lang 'common.sign_up'}}</a>
 			{{/if}} {{/if}}
@@ -122,7 +113,7 @@
         {{!-- cart item --}}
 		<li class="navUser-item navUser-item--cart">
 			<a
-				class="navUser-action"
+				class="navUser-action old-cart"
 				data-cart-preview
 				data-dropdown="cart-preview-dropdown"
 				data-options="align:right"
@@ -130,17 +121,15 @@
 			>
 				{{!-- <span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span> --}}
 				
-                {{!-- cart icon -- custom design --}}
-                <span class="navUser-item-cartLabel">
-                    <img
-					src="{{cdn 'assets/icons/cart.png'}}"
-				/>
-                </span>
-				<span class="countPill cart-quantity">  </span>
+         {{!-- cart icon -- custom design --}}
+        <span class="navUser-item-cartLabel">
+            <img src="{{cdn 'assets/icons/cart.png'}}" />
+        </span>
+				<span class="countPill cart-quantity"></span>
 			</a>
 
 			<div
-				class="dropdown-menu"
+				class="dropdown-menu small"
 				id="cart-preview-dropdown"
 				data-dropdown-content
 				aria-hidden="true"
@@ -149,14 +138,14 @@
 	</ul>
 
     {{!-- quick-search dropdown --}}
-	<div
-		class="dropdown dropdown--quickSearch"
-		id="quickSearch"
-		aria-hidden="true"
-		tabindex="-1"
-		data-prevent-quick-search-close
-	>
-		{{> components/common/quick-search}}
-	</div>
+			<div
+				class="dropdown dropdown--quickSearch"
+				id="quickSearch"
+				aria-hidden="true"
+				tabindex="-1"
+				data-prevent-quick-search-close
+			>
+				{{> components/common/quick-search}}
+			</div>
     </div>
 </nav>

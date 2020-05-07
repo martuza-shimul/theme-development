@@ -23,29 +23,23 @@
 	{{> components/common/navigation}}
 
 	<div class="customDiv">
+		{{!-- logo section --}}
+		<div class="customLogoWrapper">
+			{{#if page_type '===' 'default'}}
+			<h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
+				{{> components/common/store-logo}}
+			</h1>
+			{{else}}
+			<div class="header-logo header-logo--{{theme_settings.logo-position}}">
+				{{> components/common/store-logo}}
+			</div>
+			{{/if}}
+		</div>
 
-        {{!-- logo section --}}
-        <div class="customLogoWrapper">
-            {{#if page_type '===' 'default'}}
-            <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
-                {{> components/common/store-logo}}
-            </h1>
-            {{else}}
-            <div class="header-logo header-logo--{{theme_settings.logo-position}}">
-                {{> components/common/store-logo}}
-            </div>
-            {{/if}}
-        </div>
-
-        {{!-- nav element --}}
-        <div class="navPages-container" id="menu" data-menu>
-            {{> components/common/navigation-menu}}
-						
-        </div>
-    </div>
-
-	
-	
-	
+		{{!-- nav element --}}
+		<div class="navPages-container" id="menu" data-menu>
+			{{> components/common/navigation-menu}}
+		</div>
+	</div>
 </header>
 {{{region name="header_bottom"}}}

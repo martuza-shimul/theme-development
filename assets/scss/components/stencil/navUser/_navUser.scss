@@ -160,9 +160,17 @@
 		}
 	}
 }
-
+// .medium {
+// 	display: none !important;
+// 	@include breakpoint("medium") {
+// 		display: block !important;
+// 	}
+// }
 .navUser-item--cart {
 	display: block;
+	@include breakpoint("medium") {
+		display: none;
+	}
 
 	.navUser-action {
 		color: stencilColor("navUser-color");

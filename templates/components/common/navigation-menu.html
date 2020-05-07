@@ -2,7 +2,8 @@
     <div class="navPages-quickSearch">
         {{> components/common/quick-search}}
     </div>
-    <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
+    
+    <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}"  >
         
         {{#each categories}}
             <li class="navPages-item">
@@ -24,9 +25,46 @@
         {{/unless}}
         
             {{!-- search --}}
-		{{!-- <li class="navPages-item">
-			{{> components/common/quick-search}}
-		</li> --}}
+		<li class="navPages-item search">
+			<a
+				class="navPages-action navUser-action navUser-action--quickSearch"
+				href="#"
+				data-search="quickSearch"
+				aria-controls="quickSearch"
+				aria-expanded="false"
+				>
+
+            <img src="{{cdn 'assets/icons/search.png'}}"	/>
+            </a>
+            {{!-- quick-search dropdown --}}
+			<div
+				class="dropdown dropdown--quickSearch"
+				id="quickSearch"
+				aria-hidden="true"
+				tabindex="-1"
+				data-prevent-quick-search-close
+			>
+				{{> components/common/quick-search}}
+			</div>
+		</li>
+            {{!-- cart --}}
+		<li class="navPages-item navUser-item navUser-item--cart" >
+            <a
+				class="navPages-action new-cart"
+				
+				href="{{urls.cart}}"
+			>
+                <span class="navUser-item-cartLabel">
+                    <img
+					src="{{cdn 'assets/icons/cart.png'}}"
+				/>
+                </span>
+				<span class="countPill cart-quantity">  </span>
+			</a>
+            
+
+			
+		</li>
         
     </ul>
     <ul class="navPages-list navPages-list--user">

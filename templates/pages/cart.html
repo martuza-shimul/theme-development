@@ -1,16 +1,16 @@
 ---
-cart: 
-    suggestions:
-        limit: 4
+cart:
+  suggestions:
+    limit: 3
 
-product:
-    related_products:
-            limit: 4
+
 
 ---
 {{#partial "page"}}
 <div class="page">
-
+{{!-- product:
+    related_products:
+            limit: 4 --}}
     <main class="page-content" data-cart>
         {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
@@ -87,21 +87,24 @@ product:
         {{else}}
             <h3>{{lang 'cart.checkout.empty_cart'}}</h3>
         {{/if}}
-         {{!-- {{#if cart.suggested_products}}
-        <section class="suggestiveCart">
-            <h4>
-                {{lang 'cart.added_to_cart.you_might_also_like'}}&hellip;
-            </h4>
+        {{#if cart.suggested_products}}
+            <section class="suggestiveCart">
+                {{!-- <h4>
+                    {{lang 'cart.added_to_cart.you_might_also_like'}}&hellip;
+                </h4> --}}
+                <h2 class="title" >Related Products</h2>
 
-            <ul class="productGrid">
-                {{#each cart.suggested_products}}
-                    <li class="product">
-                        {{> components/products/card settings=../settings hide_product_quick_view=true theme_settings=../theme_settings}}
-                    </li>
-                {{/each}}
-            </ul>
-        </section>
-    {{/if}} --}}
+                <ul class="productGrid">
+                    {{#each cart.suggested_products}}
+                        <li class="product">
+                            {{> components/products/card settings=../settings hide_product_quick_view=true theme_settings=../theme_settings}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </section>
+        {{/if}}
+
+        
     </main>
     {{!-- <div class="related-products">
         {{#if product.similar_by_views}}
