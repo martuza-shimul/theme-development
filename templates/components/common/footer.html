@@ -25,12 +25,26 @@
 <footer class="footer" role="contentinfo">
 	<div class="container">
 		<section class="footer-info">
+			{{!-- about --}}
+			<article
+				class="footer-info-col footer-info-col--small"
+				data-section-type="footer-webPages"
+			>
+				<h5 class="footer-info-heading">About Us</h5>
+				{{!-- <h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5> --}}
+				<p >
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque commodi nemo inventore, numquam delectus accusantium.
+				</p>
+				<h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
+				{{> components/common/social-links}}
+			</article>
 			{{!-- navigation --}}
 			<article
 				class="footer-info-col footer-info-col--small"
 				data-section-type="footer-webPages"
 			>
-				<h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5>
+				<h5 class="footer-info-heading">Information</h5>
+				{{!-- <h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5> --}}
 				<ul class="footer-info-list">
 					{{#each pages}}
 					<li>
@@ -44,7 +58,7 @@
 			</article>
 
 			{{!-- categories --}}
-			<article
+			{{!-- <article
 				class="footer-info-col footer-info-col--small"
 				data-section-type="footer-categories"
 			>
@@ -56,9 +70,10 @@
 					</li>
 					{{/each}}
 				</ul>
-			</article>
+			</article> --}}
 
-			{{!-- brands block --}} {{#and theme_settings.shop_by_brand_show_footer
+			{{!-- brands block --}}
+			 {{#and theme_settings.shop_by_brand_show_footer
 			shop_by_brand.length}}
 			<article
 				class="footer-info-col footer-info-col--small"
@@ -74,7 +89,9 @@
 					<li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
 				</ul>
 			</article>
-			{{/and}} {{#if settings.address}} {{!-- Address Block --}}
+			{{/and}} {{#if settings.address}} 
+			
+			{{!-- Address Block --}}
 			<article
 				class="footer-info-col footer-info-col--small"
 				data-section-type="storeInfo"
@@ -87,7 +104,9 @@
 				>
 				{{/if}} {{> components/common/payment-icons}}
 			</article>
-			{{/if}} {{!-- Custom --}}
+			{{/if}} 
+			
+			{{!-- Custom --}}
 			<!-- <article class="footer-info-col">
 				<h5 class="footer-info-heading">{{lang 'footer.custom'}}</h5>
 				<ul class="footer-info-list">
@@ -106,7 +125,7 @@
 		</section>
 
 		{{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
-		<article
+		{{!-- <article
 			class="footer-info-col
                 footer-info-col--social
                 footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
@@ -114,7 +133,7 @@
 		>
 			<h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
 			{{> components/common/social-links}}
-		</article>
+		</article> --}}
 		{{/if}} {{#if theme_settings.geotrust_ssl_common_name}}
 		<div class="footer-geotrust-ssl-seal">
 			{{> components/common/geotrust-ssl-seal}}
@@ -124,8 +143,15 @@
 		<div class="copyright-wrapper">
 			<div class="dynamic-links-wrapper">
 				<ul class="dynamic-links">
-					<li>Contact Us</li>
-					<li>Status</li>
+					{{#each pages}}
+						{{#if name '==' 'Contact Us'}}
+							<li>
+								<a href="{{url}}">{{name}}</a>
+							</li>
+						{{/if}}
+					{{/each}}
+					
+					<li><a href="#">Status</a></li>
 				</ul>
 			</div>
 			<div class="copy">

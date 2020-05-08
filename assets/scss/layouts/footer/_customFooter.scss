@@ -5,6 +5,9 @@
 
 .footer-info-col {
 	font-size: fontSize("base") * 1.1; // 2
+	p {
+		padding-right: spacing("half");
+	}
 }
 
 .footer-info-col--small {
@@ -34,6 +37,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	word-break: wrap;
 
 	.dynamic-links {
 		display: flex;
@@ -41,6 +45,10 @@
 		list-style: none;
 		li {
 			margin: 0 1rem;
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
 		}
 	}
 }
