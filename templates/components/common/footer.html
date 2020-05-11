@@ -89,8 +89,9 @@
 					<li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
 				</ul>
 			</article>
-			{{/and}} {{#if settings.address}} 
+			{{/and}} 
 			
+			{{#if settings.address}} 
 			{{!-- Address Block --}}
 			<article
 				class="footer-info-col footer-info-col--small"
@@ -155,7 +156,7 @@
 				</ul>
 			</div>
 			<div class="copy">
-				{{#if theme_settings.show_powered_by}}
+				{{!-- {{#if theme_settings.show_powered_by}}
 				<div class="footer-copyright">
 					<p class="powered-by">
 						Powered by
@@ -166,7 +167,9 @@
 						>
 					</p>
 				</div>
-				{{/if}} {{#if theme_settings.show_copyright_footer}}
+				{{/if}}  --}}
+				
+				{{#if theme_settings.show_copyright_footer}}
 				<div class="footer-copyright">
 					<p class="powered-by">
 						Copyright &copy; {{moment format="YYYY"}}, {{settings.store_name}}
